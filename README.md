@@ -7,254 +7,268 @@ An AI-powered financial analysis tool that automatically categorizes and analyze
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Transformers](https://img.shields.io/badge/transformers-BART--Large--MNLI-orange.svg)
 
+---
+
 ## 🎥 Demo
 
 **See the Smart Expense Analyser in action:**
 
-[🎬 **Watch Full Demo Video**](demo/full-demo.mp4)
+[🎬 Watch Full Demo Video](demo/full-demo.mp4)
 
 *Complete walkthrough: PDF Upload → Bank Detection → AI Processing → Interactive Analytics → Q&A System → PDF Report Generation*
 
-[📄 **View Sample Report**](demo/sample-report.pdf) - See the kind of professional financial analysis this tool generates
+📄 [View Sample Report](demo/sample-report.pdf)
 
 ---
 
 ## 🌟 Features
 
 ### 🏦 Multi-Bank Support
-- **First Abu Dhabi Bank (FAB)**
-- **Emirates NBD**
-- **Commercial Bank of Dubai (CBD)**
-- **Emirates Islamic Bank (EIB)**
-- **Mashreq Bank**
-- **Dubai Islamic Bank (DIB)**
-- **Abu Dhabi Commercial Bank (ADCB)**
-- Generic parser for other banks
+- First Abu Dhabi Bank (FAB)
+- Emirates NBD
+- Commercial Bank of Dubai (CBD)
+- Emirates Islamic Bank (EIB)
+- Mashreq Bank
+- Dubai Islamic Bank (DIB)
+- Abu Dhabi Commercial Bank (ADCB)
+- Generic fallback parser for other banks
 
 ### 🤖 AI-Powered Categorization
-- **BART-Large-MNLI** model for intelligent transaction classification
-- **Hybrid approach**: Rule-based + AI for maximum accuracy
-- **Real-time processing** with progress tracking
-- **Confidence scoring** for AI predictions
+- BART-Large-MNLI model for intelligent classification
+- Hybrid: Rule-based + AI for high accuracy
+- Real-time processing with progress updates
+- Confidence scores for predictions
 
 ### 📊 Comprehensive Analytics
-- **Interactive dashboards** with zoom/pan capabilities
-- **Monthly trend analysis** and performance tracking
-- **Category spending breakdowns** with visual insights
-- **Balance tracking** and account growth analysis
-- **Financial health scoring** and recommendations
+- Interactive dashboards with zoom and pan
+- Monthly trends, balance tracking, and financial health score
+- Spending breakdowns by category and timeframe
 
 ### 💬 Natural Language Q&A
-- Ask questions like: *"What was my total income in August?"*
-- *"How much did I spend on food?"*
-- *"What's my largest expense category?"*
-- Intelligent query processing for financial insights
+Ask questions like:
+- "What was my total income in August?"
+- "How much did I spend on food?"
+- "What's my largest expense category?"
 
 ### 📄 Professional Reporting
-- **Beautiful PDF reports** with charts and insights
-- **Detailed monthly analysis** and category breakdowns
-- **Key financial metrics** and recommendations
-- **Exportable data** for further analysis
+- Generate polished PDF reports with charts and summaries
+- Monthly overviews, category details, and key metrics
+- Download and share easily
+
+---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-Python 3.8+
-pip package manager
+- Python 3.8+
+- pip
 
 ### Installation
 
-1. **Clone the repository**
+```bash
+# Clone the repository
 git clone https://github.com/yourusername/smart-expense-analyser.git
 cd smart-expense-analyser
 
-2. **Install dependencies**
-pip install -r requirements.txt
-
-3. **Run the application**
-streamlit run expense_analyser.py
-
-4. **Open your browser**
-Navigate to `http://localhost:8501`
-
-## 📦 Dependencies
-
-### Core Libraries
-streamlit>=1.28.0          # Web interface
-pandas>=1.5.0              # Data manipulation
-plotly>=5.15.0             # Interactive charts
-transformers>=4.30.0       # AI models
-torch>=2.0.0               # Deep learning framework
-
-### PDF Processing
-pdfplumber>=0.9.0          # PDF text extraction
-reportlab>=4.0.0           # PDF report generation
-
-### Optional (Enhanced Features)
-pytesseract>=0.3.10        # OCR for scanned PDFs
-pdf2image>=3.1.0           # PDF to image conversion
-
-## 💡 Usage
-
-### 1. Upload Statement
-- Drag and drop your PDF bank statement
-- Supports files up to 100MB (configured in .streamlit/config.toml)
-- Works with both digital and scanned PDFs
-
-### 2. AI Processing
-- Automatic bank detection
-- Smart transaction parsing
-- AI-powered categorization with progress tracking
-
-### 3. Interactive Analysis
-- Explore zoomable charts and trends
-- Filter by categories, months, or amounts
-- View detailed transaction breakdowns
-
-### 4. Ask Questions
-- Natural language queries about your finances
-- Get instant answers with specific amounts and insights
-
-### 5. Generate Reports
-- Create comprehensive PDF reports
-- Download professional financial analysis
-- Share insights with financial advisors
-
-## 🏗️ Architecture
-
-### Project Structure
-smart-expense-analyser/
-├── .streamlit/
-│   └── config.toml           # Streamlit configuration (100MB upload limit)
-├── demo/
-│   ├── full-demo.mp4        # Complete application walkthrough
-│   └── sample-report.pdf    # Example financial analysis report
-├── expense_analyser.py      # Main application with all components
-├── LICENSE                  # MIT License
-└── README.md               # Project documentation
-
-### Core Components (within expense_analyser.py)
-- **ComprehensiveUAEParser**: Multi-bank PDF parsing engine
-- **SmartCategorizer**: Hybrid AI+Rule categorization system
-- **EnhancedQASystem**: Natural language query processor
-- **Dashboard Functions**: Interactive Plotly visualizations
-- **Report Generator**: Professional PDF report creation
-
-### AI Pipeline
-Raw PDF → Text Extraction → Bank Detection → Transaction Parsing → 
-Rule-based Categorization → AI Enhancement → Final Classification
-
-### Supported Transaction Types
-- **Income**: Salary transfers, deposits, refunds
-- **Expenses**: Shopping, dining, transportation, utilities
-- **Banking**: ATM withdrawals, service charges, fees
-- **Healthcare**: Pharmacy, medical, insurance
-- **Business**: Corporate transactions, VAT charges
-
-### Supported Formats
-- ✅ Digital PDFs with selectable text
-- ✅ Scanned PDFs (with OCR enabled)
-- ✅ Multi-page statements
-- ✅ Multiple currencies (AED focus)
-
-## 🛠️ Configuration
-
-### Settings Panel
-- **Max file size**: 1-100MB (default: 100MB via config.toml)
-- **Max pages**: 1-30 pages (default: 20)
-- **AI processing**: Enable/disable BART model
-
-### Environment Variables
-# Optional: Specify device for AI processing
-CUDA_VISIBLE_DEVICES=0    # Use GPU if available
-
-## 🔒 Privacy & Security
-
-- **Local processing**: All data processed on your machine
-- **No data storage**: Files are not saved or transmitted
-- **No cloud dependency**: Works completely offline
-- **Bank-grade privacy**: Your financial data stays private
-
-## 📊 Sample Outputs
-
-### Financial Summary
-💰 Income: AED 25,000.00
-💸 Expenses: AED 18,500.00
-📈 Net Flow: AED 6,500.00
-💳 Transactions: 156
-
-### Category Breakdown
-- **Food & Dining**: AED 4,200.00 (22.7%)
-- **Transportation**: AED 2,100.00 (11.4%)
-- **Shopping**: AED 3,800.00 (20.5%)
-- **Utilities**: AED 1,200.00 (6.5%)
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-### Areas for Contribution
-- **New bank parsers** for additional UAE banks
-- **Enhanced AI models** for better categorization
-- **Additional chart types** and visualizations
-- **Multi-language support** (Arabic, Hindi, etc.)
-- **Mobile optimization** for better responsive design
-
-### Development Setup
-# Fork and clone the repository
-git clone https://github.com/yourusername/smart-expense-analyser.git
-
-# Create a virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# or
-venv\Scripts\activate     # Windows
-
-# Install development dependencies
+# Install dependencies
 pip install -r requirements.txt
 
 # Run the application
 streamlit run expense_analyser.py
+```
 
-### Submission Guidelines
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Then open [http://localhost:8501](http://localhost:8501) in your browser.
+
+---
+
+## 📦 Dependencies
+
+### Core Libraries
+- `streamlit>=1.28.0`
+- `pandas>=1.5.0`
+- `plotly>=5.15.0`
+- `transformers>=4.30.0`
+- `torch>=2.0.0`
+
+### PDF Processing
+- `pdfplumber>=0.9.0`
+- `reportlab>=4.0.0`
+
+### Optional (for OCR support)
+- `pytesseract>=0.3.10`
+- `pdf2image>=3.1.0`
+
+---
+
+## 💡 Usage Flow
+
+### 1. Upload Statement
+- Drag and drop your PDF
+- Supports up to 100MB (configured in `.streamlit/config.toml`)
+- Scanned and digital PDFs supported
+
+### 2. Processing
+- Bank detection
+- Smart parsing and AI-based classification
+
+### 3. Analytics Dashboard
+- Filter, zoom, and analyze your spending
+- Trends, balances, and breakdowns
+
+### 4. Q&A
+- Ask questions in natural language
+- Instant financial answers powered by NLP
+
+### 5. Generate Report
+- Create a detailed PDF report
+- Share with advisors or keep for records
+
+---
+
+## 🏗️ Architecture
+
+### Project Structure
+```text
+smart-expense-analyser/
+├── .streamlit/
+│   └── config.toml           # Streamlit configuration (100MB upload limit)
+├── demo/
+│   ├── full-demo.mp4         # Complete application walkthrough
+│   └── sample-report.pdf     # Example financial analysis report
+├── expense_analyser.py       # Main application with all components
+├── LICENSE                   # MIT License
+├── README.md                 # Project documentation (you're reading this!)
+├── requirements.txt          # Required Python libraries
+```
+
+### Key Modules in `expense_analyser.py`
+- `ComprehensiveUAEParser`: PDF text extraction and bank parsing
+- `SmartCategorizer`: Hybrid classification (rule-based + AI)
+- `EnhancedQASystem`: NLP-driven financial Q&A
+- `Dashboard Functions`: Plotly dashboards
+- `Report Generator`: PDF summary builder
+
+### Processing Pipeline
+```
+PDF → Text Extraction → Bank Detection → Transaction Parsing → 
+Categorization → AI Enhancement → Dashboard & Report
+```
+
+### Supported Categories
+- **Income**: Salaries, deposits
+- **Expenses**: Food, transport, shopping
+- **Banking**: Fees, withdrawals
+- **Healthcare**: Medical, insurance
+- **Business**: VAT, company charges
+
+---
+
+## 🛠️ Configuration
+
+### `.streamlit/config.toml`
+```toml
+[server]
+maxUploadSize = 100
+```
+
+### Environment Variables (Optional)
+```bash
+CUDA_VISIBLE_DEVICES=0  # Use GPU if available
+```
+
+---
+
+## 🔒 Privacy & Security
+
+- 100% **local processing** — no data is sent to the cloud
+- **Zero data storage** — nothing is saved unless you choose
+- **Bank-grade privacy** — your data stays on your device
+
+---
+
+## 📊 Sample Outputs
+
+### Summary
+- 💰 Income: AED 25,000.00
+- 💸 Expenses: AED 18,500.00
+- 📈 Net Flow: AED 6,500.00
+- 💳 Transactions: 156
+
+### Category Breakdown
+- Food & Dining: AED 4,200.00
+- Transportation: AED 2,100.00
+- Shopping: AED 3,800.00
+- Utilities: AED 1,200.00
+
+---
+
+## 🤝 Contributing
+
+We welcome PRs and contributions!
+
+### How to Contribute
+
+```bash
+# Fork the repo
+git clone https://github.com/yourusername/smart-expense-analyser.git
+cd smart-expense-analyser
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # macOS/Linux
+# or
+venv\Scripts\activate     # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Start app
+streamlit run expense_analyser.py
+```
+
+### PR Workflow
+1. Fork and branch
+2. Commit your changes
+3. Push and open PR
+
+---
 
 ## 🐛 Troubleshooting
 
-### Common Issues
-
-**Q: PDF parsing fails**
-# Install additional dependencies
+**PDF parsing fails?**
+```bash
 pip install pytesseract pdf2image
-# For Ubuntu/Debian
-sudo apt-get install tesseract-ocr
+sudo apt-get install tesseract-ocr  # (Linux)
+```
 
-**Q: AI model loading fails**
-# Check available memory and CUDA
+**Model loading fails?**
+```bash
 python -c "import torch; print(torch.cuda.is_available())"
-# Reduce model complexity in settings
+```
 
-**Q: Streamlit won't start**
-# Update Streamlit
+**Streamlit won’t start?**
+```bash
 pip install --upgrade streamlit
-# Clear cache
 streamlit cache clear
+```
+
+---
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+---
 
 ## 🙏 Acknowledgments
 
-- **Hugging Face Transformers** for the BART-Large-MNLI model
-- **Streamlit** for the excellent web framework
-- **Plotly** for interactive visualizations
-- **UAE Banking Community** for format specifications
+- Hugging Face Transformers
+- Streamlit Framework
+- Plotly for visualizations
+- UAE banking community (format specifications)
 
-**⭐ If you find this project helpful, please star the repository!**
+---
 
-Made with ❤️ for the UAE financial community
+**⭐ If you found this helpful, give the repo a star!**
+
+Made with ❤️ for the UAE financial community.
