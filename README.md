@@ -67,8 +67,8 @@ Ask questions like:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/smart-expense-analyser.git
-cd smart-expense-analyser
+git clone https://github.com/rajrejin/Smart-Expense-Analyser.git
+cd Smart-Expense-Analyser
 
 # Install dependencies
 pip install -r requirements.txt
