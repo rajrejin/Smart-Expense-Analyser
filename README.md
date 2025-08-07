@@ -129,10 +129,10 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 
 ### Project Structure
 ```text
-smart-expense-analyser/
+Smart-Expense-Analyser/
 ├── .streamlit/
 │   └── config.toml           # Streamlit configuration (100MB upload limit)
-├── demo/
+├── Demo/
 │   ├── full-demo.mp4         # Complete application walkthrough
 │   └── sample-report.pdf     # Example financial analysis report
 ├── expense_analyser.py       # Main application with all components
