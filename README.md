@@ -13,11 +13,11 @@ An AI-powered financial analysis tool that automatically categorizes and analyze
 
 **See the Smart Expense Analyser in action:**
 
-[🎬 Watch Full Demo Video](demo/full-demo.mp4)
+[🎬 Watch Full Demo Video](https://github.com/rajrejin/Smart-Expense-Analyser/raw/main/Demo/full-demo.mp4)  
 
 *Complete walkthrough: PDF Upload → Bank Detection → AI Processing → Interactive Analytics → Q&A System → PDF Report Generation*
 
-📄 [View Sample Report](demo/sample-report.pdf)
+📄 [View Sample Report](https://github.com/rajrejin/Smart-Expense-Analyser/raw/main/Demo/sample-report.pdf)
 
 ---
 
